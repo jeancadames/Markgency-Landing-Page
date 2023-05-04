@@ -110,7 +110,7 @@ scroll-behavior: smooth;
 }
 
 body {
-
+position: relative;
 background-color: var(--white-1);
 color: var(--gray-web);
 font-size: 1.6rem;
@@ -324,6 +324,7 @@ gap: 30px;
     text-align: center;
     box-shadow: var(--shadow-1);
     transition: var(--transition-2);
+    height: 100%;
 }
 .service-card:is(:hover, :focus-within) {
     transform: translateY(-10px); 
@@ -341,6 +342,7 @@ gap: 30px;
 }
 .service-card .card-text {
     font-size: var(--fs-6); 
+    cursor: default;
 }
 .project .section-text {
     margin-block: 5px 35px; 
@@ -502,6 +504,12 @@ gap: 30px;
     line-height: 1;
     margin-block-end: 10px;
 }
+.time {
+    color: var(--deep-blue);
+    font-size: var(--fs-6);
+    line-height: 1;
+    margin-block-end: 10px;
+}
 .blog-card .card-title {
     transition: var(--transition-1); 
 }
@@ -559,6 +567,7 @@ textarea.input-field {
 .label-link {
     display: inline-block;
     color: var(--deep-blue);
+    cursor: pointer;
 }
 .label-link:is(:hover, :focus) {
     text-decoration: underline; 
@@ -648,6 +657,150 @@ textarea.input-field {
 }
 .back-top-btn:is(:hover, :focus) {
     opacity: 0.9; 
+}
+
+main{
+    position: relative;
+}
+
+.fixed-container{
+    display: none;
+    position: fixed;
+    background-color: var(--white-2);
+    width: 35%;
+    padding: 5rem;
+    top: 15%;
+    left: 50%;
+    overflow-y: auto;
+    height: 70%;
+    transform: translateX(-50%);
+    text-align: justify;
+    z-index: 10;
+    min-width: 350px;
+}
+
+.fixed-container .title-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-container ion-icon{
+    font-size: 2.5rem;
+}
+
+.section.project{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.section.project img{
+    width: 70%;
+    margin: auto;
+}
+
+.section.project .section-title{
+    margin: 2rem 0;
+}
+
+.section.project .section-content{
+    margin: 3rem 10rem;
+}
+
+.results-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.result-card{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    box-shadow: var(--shadow-2);
+    border-radius: var(--radius-5);
+    transition: var(--transition-2);
+}
+
+.result-card:is(:hover, :focus-within) {
+    transform: translateY(-10px); 
+}
+
+.result-card ion-icon{
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    background-color: #758BFD;
+    color: #fff;
+    padding: 2rem;
+    border-radius: var(--radius-5);
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 7rem;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+}
+
+.footer-col ul li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer-col ul li ion-icon{
+    margin-right: 1rem;
+}
+
+.send-container{
+    display: flex;
+    align-items: center;
+    background-color: var(--white-2);
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow-2);
+}
+
+.send-container input:focus{
+    outline: none;
+}
+
+.send-container ion-icon{
+    font-size: 2rem;
+}
+
+.header-blog-container{
+    margin: auto;
+    width: 70%;
+    min-width: 50%;
+}
+
+.title-blog-container {
+    display: flex;
+}
+
+.title-blog-container h1{
+    font-size: 3.5rem;
+    color: var(--black);
+}
+
+.title-blog-container img{
+    width: 40%;
+}
+
+.blog-content{
+    margin: 10rem auto;
+    width: 30%;
+}
+
+.blog-content img{
+    width: 100%;
+    margin: 5rem 0;
 }
 
 @media (min-width: 575px) {
@@ -906,3 +1059,27 @@ textarea.input-field {
         padding: 15px; 
 }
 } 
+
+@media screen and (max-width: 1000px) {
+    .title-blog-container {
+        flex-wrap: wrap;
+    }
+    .title-blog-container img{
+        width: 100%;
+    }
+    .blog-content{
+        margin: 5rem auto;
+        width: 70%;
+    }
+    .title-blog-container h1{
+        font-size: 2rem;
+        margin-top: 1rem;
+        color: var(--black);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .section-content{
+        margin: 3rem !important;
+    }
+}
